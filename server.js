@@ -23,6 +23,11 @@ app.use('/api/auth', authRoutes);
 app.use('/api/complaints', complaintRoutes);
 app.use('/api/worker', workerRoutes);
 
+// ✅ Simple test route for backend health check
+app.get('/api/auth/test', (req, res) => {
+  res.json({ message: '✅ Auth routes working' });
+});
+
 // Root route
 app.get('/', (req, res) => {
   res.send('✅ CleanUPHub API is running');
